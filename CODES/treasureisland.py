@@ -2,24 +2,24 @@
 
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
-direction = input('You are at a cross-road. Where do you want to go ? Type "left" or "right" \n')
-lake = input('You come to a lake. There is an island in the middle of the lake . Type "wait" to wait for a boat or "swim" to swim across the lake\n')
-door = input("You arrived at the island unharmed . Ther is a house with 3 doors . one red one yellow and one blue . which colour do you choose ?\n")
+direction = input('You are at a cross-road. Where do you want to go ? Type "left" or "right" \n').lower()
 
-if direction =="left" or direction == "LEFT" :
-    print(lake)
-    if lake == "swim" or lake == "SWIM" :
+if direction =="left" :
+    lake = input('You come to a lake. There is an island in the middle of the lake . Type "wait" to wait for a boat or "swim" to swim across the lake\n').lower()
+
+    if lake == "swim" :
         print("You were eaten by a crocodile !!!\n")
-    elif lake == "wait" or lake == "WAIT" :
-        print(door)
-        if door == "red" or door == "RED" :
-            print("You entered a room full or fire and died . game over .\n")    
-        elif door == "yellow" or door == "YELLOW" :
-            print("You entered a room full Beasts and they killed you . game over .\n")    
-        elif door == "blue" or door == "blue" :
-            print("HURRAY!!! , You have entered the correct room with treasue and You Won the game .\n")    
+    elif lake == "wait":
+        door = input("You arrived at the island unharmed . There is a house with 3 doors . one red one yellow and one blue . which colour do you choose ?\n").lower()
 
-elif direction == "right" or direction == "RIGHT" :
+        if door == "red":
+            print("You entered a room full of fire and died . game over .\n")    
+        elif door == "yellow" :
+            print("You entered a room full Beasts and they killed you . game over .\n")    
+        elif door == "blue" :
+            print("HURRAY!!! , You have entered the correct room with treasure and You Won the game .\n")    
+
+elif direction == "right" :
     print("You fell into a deep hole. game over.\n")
 else :
     print("Enter a valid direction .\n")
