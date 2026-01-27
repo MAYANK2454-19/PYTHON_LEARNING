@@ -7,7 +7,7 @@ avg = 0
 elements = 0
 
 #length of list 
-for i in  (students_height):
+for student in  (students_height):
     
         elements +=1
 
@@ -18,8 +18,8 @@ print(students_height)
 
 
 #sum of list
-for j in range (0,elements):
-    sum +=students_height[j]
+for height in range (0,elements):
+    sum +=students_height[height]
      
 # avg of list 
 avg = round(sum / elements)
