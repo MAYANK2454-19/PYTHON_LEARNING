@@ -1,6 +1,6 @@
 import random 
 names_string = input("Give me names of everyone , separated with a comma ")
-names=names_string.split(",")
+names=names_string.split(",ff")
 # num = int (len(names))
 # a = random.randint(0,(num-1))
 # using the choice function
