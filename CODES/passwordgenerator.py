@@ -5,19 +5,16 @@ symbols = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.',
 ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z']
 print("Welcome! to MyPass generator")
-print(len(letters))
-print(len(numbers))
-print(len(symbols))
-n=(random.randint(0,len(numbers)))
-l=(random.randint(0,len(letters)))
-s=(random.randint(0,len(symbols)))
+password_list=[]
 nr_letters=int(input("How many letters you want in your password \n"))
 nr_numbers=int(input("How many digits you want in your password \n"))
 nr_symbols=int(input("How many symbols you want in your password \n"))
-for num in range (0,nr_numbers+1) :
-    password +=numbers[n] 
-for num in range (0,nr_letters+1) :
-    password +=numbers[l] 
-for num in range (0,nr_symbols+1) :
-    password +=numbers[s] 
+for num in range (0,nr_numbers) :
+    password_list.append(random.choice(numbers))
+for let in range (0,nr_letters) :
+    password_list.append(random.choice(letters))
+for sym in range (0,nr_symbols) :
+    password_list.append(random.choice(symbols))
+random.shuffle(password_list)
+password = "".join(password_list)
 print(password)
